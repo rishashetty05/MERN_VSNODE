@@ -10,6 +10,8 @@ const Container = styled(FormGroup)`
         margin: 20px
     }
 ` 
+// " & > " is used to handle child components of container ie handling css of FormControl
+
 const defaultValue = {
     name : '',
     username : '',
@@ -23,7 +25,8 @@ const AddUser = () => {
 
     const onValueChange = (e) => {
         //console.log(e.target.name , e.target.value)
-        setUser({...user, })
+        setUser({...user, [e.target.name] : e.target.value })
+        //console.log(user)
     }
     return(
         <Container>
