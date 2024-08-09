@@ -26,9 +26,14 @@ const AddUser = () => {
 
     const onValueChange = (e) => {
         //console.log(e.target.name , e.target.value)
-        setUser({...user, [e.target.name] : e.target.value })
+        setUser({...user, [e.target.name] : e.target.value }) //...user is used to retain ealrlier valiues from old events
         //console.log(user)
     }
+
+    const addUserDetails = () => {
+
+    }
+
     return(
         <Container>
             <Typography variant="h4">Add User</Typography>
@@ -49,7 +54,7 @@ const AddUser = () => {
                 <Input onChange={(e) => onValueChange(e)} name="phone" />
             </FormControl>
             <FormControl>
-                <Button variant = "contained">Add User</Button>
+                <Button variant = "contained" onClick={() => addUserDetails()}>Add User</Button>
             </FormControl>
         </Container>
     )
