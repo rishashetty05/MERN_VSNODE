@@ -22,7 +22,7 @@ const defaultValue = {
 
 const AddUser = () => {
 
-    const [user, setUser] = useState({defaultValue});
+    const [user, setUser] = useState({defaultValue}); //using a react hook called useState to store values of the event captured by onValueChange
 
     const onValueChange = (e) => {
         //console.log(e.target.name , e.target.value)
