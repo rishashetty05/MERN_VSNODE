@@ -3,11 +3,12 @@ import { useState } from "react";
 
 import { FormControl, FormGroup, InputLabel, Input, Typography, styled, Button } from "@mui/material";
 
+import { addUser } from "../service/api";
+
 const Container = styled(FormGroup)`
     width: 50%;
     margin: 5% auto 0 auto;
-    & > div {
-    
+    & > div {    
         margin: 20px
     }
 ` 
@@ -29,9 +30,10 @@ const AddUser = () => {
         setUser({...user, [e.target.name] : e.target.value }) //...user is used to retain ealrlier valiues from old events
         //console.log(user)
     }
+    
 
-    const addUserDetails = () => {
-
+    const addUserDetails = async() => {
+        await addUser(user);   // api call onClick
     }
 
     return(
