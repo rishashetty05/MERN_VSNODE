@@ -4,6 +4,7 @@ import { useState } from "react";
 import { FormControl, FormGroup, InputLabel, Input, Typography, styled, Button } from "@mui/material";
 
 import { addUser } from "../service/api";
+import { useNavigate } from 'react-router-dom';
 
 const Container = styled(FormGroup)`
     width: 50%;
