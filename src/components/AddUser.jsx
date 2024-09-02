@@ -26,6 +26,8 @@ const AddUser = () => {
 
     const [user, setUser] = useState({defaultValue}); //using a react hook called useState to store values of the event captured by onValueChange
 
+    const navigate = useNavigate();
+
     const onValueChange = (e) => {
         //console.log(e.target.name , e.target.value)
         setUser({...user, [e.target.name] : e.target.value }) //...user is used to retain ealrlier valiues from old events
@@ -35,6 +37,7 @@ const AddUser = () => {
 
     const addUserDetails = async() => {
         await addUser(user);   // api call onClick
+        navigate('/all');
     }
 
     return(

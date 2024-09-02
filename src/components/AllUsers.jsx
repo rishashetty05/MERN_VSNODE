@@ -1,8 +1,21 @@
 import { useEffect, useState } from 'react';
-import { Table, TableHead, TableBody, TableRow, TableCell } from '@mui/material';
+import { Table, TableHead, TableBody, TableRow, TableCell, styled } from '@mui/material';
 
 import { getUsers } from '../service/api';
 
+const StyledTable = styled(Table)` 
+    width : 90%; 
+    margin : 50px auto 0 auto;
+`
+//replace table with StyledTable to implement CSS for adding space and width from the heding columns to the edge of the screen/navigator bar
+
+const THead = styled (TableRow)`
+    background : #000000;
+    & > th {
+        color : #fff;
+    }
+` 
+//replading tablerow with THead & changing table cell data color of TableCell namely, th
 
 const AllUsers = () => {
 
@@ -19,15 +32,16 @@ const AllUsers = () => {
     }
 
     return (
-        <Table>
+        //<Table>
+        <StyledTable>
             <TableHead>
-                <TableRow>
+                <THead>
                     <TableCell>Id</TableCell>
                     <TableCell>Name</TableCell>
                     <TableCell>Username</TableCell>
                     <TableCell>Email</TableCell>
                     <TableCell>Phone</TableCell>
-                </TableRow>
+                </THead>
             </TableHead>
             <TableBody>
                {
@@ -42,7 +56,8 @@ const AllUsers = () => {
                     ))
                }
             </TableBody>
-        </Table>
+        </StyledTable>
+        //</Table>
     )
 }
 
