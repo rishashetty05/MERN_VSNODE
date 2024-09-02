@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Table, TableHead, TableBody, TableRow, TableCell, styled } from '@mui/material';
+import { Table, TableHead, TableBody, TableRow, TableCell, styled, Button } from '@mui/material';
 
 import { getUsers } from '../service/api';
 
@@ -13,9 +13,16 @@ const THead = styled (TableRow)`
     background : #000000;
     & > th {
         color : #fff;
+        font-size : 20px;
     }
 ` 
 //replading tablerow with THead & changing table cell data color of TableCell namely, th
+
+const TBody = styled (TableRow)`
+    & > td {
+        font-size : 20px;
+    }
+`
 
 const AllUsers = () => {
 
@@ -46,13 +53,17 @@ const AllUsers = () => {
             <TableBody>
                {
                     users.map( user => (
-                        <TableRow>
+                        <TBody>
                             <TableCell>{user.userId}</TableCell>
                             <TableCell>{user.name}</TableCell>
                             <TableCell>{user.username}</TableCell>
                             <TableCell>{user.email}</TableCell>
                             <TableCell>{user.phone}</TableCell>
-                        </TableRow>
+                            <TableCell>
+                                <Button variant='contained' style = {{ marginRight:10 }}>Edit</Button>
+                                <Button variant='contained' color='secondary'>Delete</Button>
+                            </TableCell>
+                        </TBody>
                     ))
                }
             </TableBody>
