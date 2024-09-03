@@ -3,6 +3,8 @@ import { Table, TableHead, TableBody, TableRow, TableCell, styled, Button } from
 
 import { getUsers } from '../service/api';
 
+import { Link } from 'react-router-dom';
+
 const StyledTable = styled(Table)` 
     width : 90%; 
     margin : 50px auto 0 auto;
@@ -60,7 +62,7 @@ const AllUsers = () => {
                             <TableCell>{user.email}</TableCell>
                             <TableCell>{user.phone}</TableCell>
                             <TableCell>
-                                <Button variant='contained' style = {{ marginRight:10 }}>Edit</Button>
+                                <Button variant='contained' style = {{ marginRight:10 }} component= {Link} to={`/edit/${user.userId}`}>Edit</Button>
                                 <Button variant='contained' color='secondary'>Delete</Button>
                             </TableCell>
                         </TBody>
