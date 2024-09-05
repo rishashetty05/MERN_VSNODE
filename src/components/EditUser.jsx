@@ -42,7 +42,7 @@ const EditUser = () => {
 
     return(
         <Container>
-            <Typography variant="h4">Add User</Typography>
+            <Typography variant="h4">Edit User</Typography>
             <FormControl>
                 <InputLabel>Name</InputLabel>
                 <Input onChange={(e) => onValueChange(e)} name="name" />
