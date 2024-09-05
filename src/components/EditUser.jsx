@@ -1,10 +1,10 @@
 //hook state
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { FormControl, FormGroup, InputLabel, Input, Typography, styled, Button } from "@mui/material";
 
-import { addUser } from "../service/api";
-import { useNavigate } from 'react-router-dom';
+import { addUser, getUser } from "../service/api";
+import { useNavigate, useParams  } from 'react-router-dom';
 
 const Container = styled(FormGroup)`
     width: 50%;
@@ -27,6 +27,17 @@ const EditUser = () => {
     const [user, setUser] = useState({defaultValue}); //using a react hook called useState to store values of the event captured by onValueChange
 
     const navigate = useNavigate();
+
+    const { id } = useParams();
+
+    useEffect(() => {
+        loadUserDetails();
+    }, [])
+
+    const loadUserDetails = async () => {
+        const response = await getUser(id);
+
+    }
 
     const onValueChange = (e) => {
         //console.log(e.target.name , e.target.value)
