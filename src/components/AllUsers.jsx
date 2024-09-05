@@ -17,14 +17,14 @@ const THead = styled (TableRow)`
         color : #fff;
         font-size : 20px;
     }
-` 
+`;
 //replading tablerow with THead & changing table cell data color of TableCell namely, th
 
 const TBody = styled (TableRow)`
     & > td {
         font-size : 20px;
     }
-`
+`;
 
 const AllUsers = () => {
 
@@ -50,6 +50,7 @@ const AllUsers = () => {
                     <TableCell>Username</TableCell>
                     <TableCell>Email</TableCell>
                     <TableCell>Phone</TableCell>
+                    <TableCell></TableCell>
                 </THead>
             </TableHead>
             <TableBody>
@@ -59,7 +60,7 @@ const AllUsers = () => {
                             <TableCell>{user.userId}</TableCell>
                             <TableCell>{user.name}</TableCell>
                             <TableCell>{user.username}</TableCell>
-                            <TableCell>{user.email}</TableCell>
+                            <TableCell>{user.email}</TableCell> 
                             <TableCell>{user.phone}</TableCell>
                             <TableCell>
                                 <Button variant='contained' style = {{ marginRight:10 }} component= {Link} to={`/edit/${user.userId}`}>Edit</Button>

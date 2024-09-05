@@ -31,7 +31,7 @@ const EditUser = () => {
     const onValueChange = (e) => {
         //console.log(e.target.name , e.target.value)
         setUser({...user, [e.target.name] : e.target.value }) //...user is used to retain ealrlier valiues from old events
-        //console.log(user)
+        console.log(user)
     }
     
 
