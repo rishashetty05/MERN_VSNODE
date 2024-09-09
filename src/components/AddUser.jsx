@@ -34,7 +34,6 @@ const AddUser = () => {
         //console.log(user)
     }
     
-
     const addUserDetails = async() => {
         await addUser(user);   // api call onClick
         navigate('/all');

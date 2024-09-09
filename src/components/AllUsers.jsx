@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'; // useEffect made from 3 life cycle hooks component did mount, did update , will mount 
 import { Table, TableHead, TableBody, TableRow, TableCell, styled, Button } from '@mui/material';
 
 import { getUsers } from '../service/api';
@@ -9,7 +9,7 @@ const StyledTable = styled(Table)`
     width : 90%; 
     margin : 50px auto 0 auto;
 `
-//replace table with StyledTable to implement CSS for adding space and width from the heding columns to the edge of the screen/navigator bar
+//replace Table with StyledTable to implement CSS for adding space and width from the heding columns to the edge of the screen/navigator bar
 
 const THead = styled (TableRow)`
     background : #000000;
@@ -18,13 +18,14 @@ const THead = styled (TableRow)`
         font-size : 20px;
     }
 `;
-//replading tablerow with THead & changing table cell data color of TableCell namely, th
+//replacing Tablerow with THead & changing table cell data color & size of TableCell namely, th
 
 const TBody = styled (TableRow)`
     & > td {
         font-size : 20px;
     }
 `;
+//replacing Tablerow with TBody & changing table cell data size of TableCell namely, td
 
 const AllUsers = () => {
 

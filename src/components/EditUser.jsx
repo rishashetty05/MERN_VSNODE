@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { FormControl, FormGroup, InputLabel, Input, Typography, styled, Button } from "@mui/material";
 
 import { addUser, getUser } from "../service/api";
-import { useNavigate, useParams  } from 'react-router-dom';
+import { useNavigate , useParams} from 'react-router-dom';
 
 const Container = styled(FormGroup)`
     width: 50%;
@@ -30,22 +30,20 @@ const EditUser = () => {
 
     const { id } = useParams();
 
-    useEffect(() => {
+    useEffect(()=> {
         loadUserDetails();
     }, [])
 
-    const loadUserDetails = async () => {
+    const loadUserDetails = async() => {
         const response = await getUser(id);
-
     }
 
     const onValueChange = (e) => {
         //console.log(e.target.name , e.target.value)
         setUser({...user, [e.target.name] : e.target.value }) //...user is used to retain ealrlier valiues from old events
-        console.log(user)
+        //console.log(user)
     }
     
-
     const addUserDetails = async() => {
         await addUser(user);   // api call onClick
         navigate('/all');

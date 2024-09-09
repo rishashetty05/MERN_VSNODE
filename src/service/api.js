@@ -13,7 +13,7 @@ export const addUser = async (data) => {//this is a asynchronous request
 
 export const getUsers = async () => {
     try {
-        return await axios.get(`${URL}/all`);
+        return await axios.get(`${URL}/all`); //returns promise
     } catch (error) {
         console.log('Error while calling getUsers API', error);
     }
@@ -21,7 +21,7 @@ export const getUsers = async () => {
 
 export const getUser = async (id) => {
     try {
-        return await axios.get(`${URL}/{id}`);
+        return await axios.get(`${URL}/${id}`); 
     } catch (error){
         console.log('Error while calling getUser API', error);
     }
