@@ -36,6 +36,7 @@ const EditUser = () => {
 
     const loadUserDetails = async() => {
         const response = await getUser(id);
+        setUser(response.data);
     }
 
     const onValueChange = (e) => {
@@ -54,19 +55,19 @@ const EditUser = () => {
             <Typography variant="h4">Edit User</Typography>
             <FormControl>
                 <InputLabel>Name</InputLabel>
-                <Input onChange={(e) => onValueChange(e)} name="name" />
+                <Input onChange={(e) => onValueChange(e)} name="name" value = {user.name} />
             </FormControl>
             <FormControl>
                 <InputLabel>Username</InputLabel>
-                <Input onChange={(e) => onValueChange(e)} name="username" />
+                <Input onChange={(e) => onValueChange(e)} name="username" value = {user.username} />
             </FormControl>
             <FormControl>
                 <InputLabel>Email</InputLabel>
-                <Input onChange={(e) => onValueChange(e)} name="email" />
+                <Input onChange={(e) => onValueChange(e)} name="email" value = {user.email} />
             </FormControl>
             <FormControl>
                 <InputLabel>Phone</InputLabel>
-                <Input onChange={(e) => onValueChange(e)} name="phone" />
+                <Input onChange={(e) => onValueChange(e)} name="phone" value = {user.phone} />
             </FormControl>
             <FormControl>
                 <Button variant = "contained" onClick={() => addUserDetails()}>Edit User</Button>
