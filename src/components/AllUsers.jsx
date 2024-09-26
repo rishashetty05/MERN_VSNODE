@@ -58,14 +58,14 @@ const AllUsers = () => {
                {
                     users.map( user => (
                         <TBody>
-                            <TableCell>{user.userId}</TableCell>
+                            <TableCell >{user.userId}</TableCell>
                             <TableCell>{user.name}</TableCell>
                             <TableCell>{user.username}</TableCell>
                             <TableCell>{user.email}</TableCell> 
                             <TableCell>{user.phone}</TableCell>
                             <TableCell>
                                 <Button variant='contained' style = {{ marginRight:10 }} component= {Link} to={`/edit/${user.userId}`}>Edit</Button>
-                                <Button variant='contained' color='secondary'>Delete</Button>
+                                <Button variant='contained' color='secondary' onClick={() => deleteUser(user.userId )} >Delete</Button>
                             </TableCell>
                         </TBody>
                     ))

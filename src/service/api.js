@@ -26,3 +26,11 @@ export const getUser = async (id) => {
         console.log('Error while calling getUser API', error);
     }
 }
+
+export const editUser = async (user, id) => {
+    try {
+        return await axios.post(`${URL}/${id}`, user);
+    } catch (error){
+        console.log('Error while calling editUser API', error);
+    }
+}  
